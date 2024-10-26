@@ -1,0 +1,190 @@
+.logo-display {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    padding: 50px 0;
+    box-shadow: 3px 0 var(--neutral-500);
+
+    /* background-image: url("/public/loginArt.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; */
+
+    >img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.app-description {
+    width: 100%;
+    font-size: clamp(0.3rem, 1rem, 1.5rem);
+
+    p{
+        text-decoration: underline;
+    }
+}
+
+.form-button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--text-color);
+    font: var(--base-font-family);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.form-button:hover {
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+
+.form-change-anchor{
+    /* width: 100%; */
+    padding: 0 10px 0 0;
+    text-align: left;
+    border-bottom: 3px solid var(--text-color);
+
+    a{
+        font-weight: 600;
+    }
+}
+
+.sign-up-page,
+.login-page {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.sign-up-form-display,
+.login-form-display {
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 80px 50px;
+}
+
+.sign-up-form,
+.login-form {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    gap: 20px;
+    margin: auto 0;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        label {
+            width: 100%;
+            text-align: left;
+            font-family: var(--base-font-family);
+            font-size: clamp(.125rem, .5rem .8rem);
+            font-weight: 600;
+
+            span{
+                color: var(--danger-color);
+            }
+        }
+
+        input {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-align: left;
+            width: 100%;
+            height: 30px;
+            padding: 0 10px;
+            color: var(--text-color);
+            border-bottom: 3px solid var(--text-color);
+            font-family: var(--base-font-family);
+        }
+
+        input:focus{
+            border-bottom: 3px solid var(--succes-color);
+        }
+
+    }
+}
+
+.input-error::after,
+.input-false::after,
+.pass-different::after {
+    color: var(--background-color);
+    font-size: 0.8em;
+    margin-left: 10px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.input-error::after {
+    content: 'This field is required';
+    background-color: var(--danger-color);
+}
+
+.input-false::after {
+    content: 'Wrong Username or Password';
+    background-color: var(--warning-color);
+}
+
+.pass-different::after {
+    content: 'The password you inputted is different';
+    background-color: var(--warning-color);
+}
+
+@media (max-width: 737px) {
+    .login-page {
+        position: relative;
+    }
+
+    .logo-display {
+        width: 100%;
+        padding: 0;
+    }
+
+    .sign-up-form-display,
+    .login-form-display {
+        width: 80%;
+        height: 80%;
+        background-color: rgba(253, 253, 253, 0.9);
+        padding: 20px 10px;
+        border-radius: 5px;
+
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        z-index: 1;
+    }
+}
